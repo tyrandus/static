@@ -57,6 +57,12 @@ function draw () {
 function createFigures () {
   figures = []
 
+  // Canvas-Element verbergen
+  canv.style('opacity', 0)
+  setTimeout(function () {
+    canv.hide()
+  }, 300)
+
   // erstellt <maxFigures> Zahlen
   for (var i = 0; i < maxFigures; i++) {
     figures.push({
@@ -67,17 +73,11 @@ function createFigures () {
       finished: false
     })
   }
-
-  // Canvas-Element verbergen
-  canv.style('opacity', 0)
-  setTimeout(function () {
-    canv.hide()
-  }, 300)
 }
 
 function windowResized () {
   resizeCanvas(windowWidth, windowHeight);
-  if(!active) {
+  if (!active) {
     createFigures()
   }
 }
