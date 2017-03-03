@@ -11,6 +11,8 @@ function setup () {
   canv.id('canv')
   textSize(fontSize)
   textFont('Consolas')
+  background('rgba(0, 0, 0, 0)')
+  fill(0, 255, 70)
 
   // Zahlen generieren
   createFigures()
@@ -21,13 +23,6 @@ function draw () {
     // Canvas-Element zurücksetzen
     var canvas = document.getElementById('canv')
     canvas.getContext('2d').clearRect(0, 0, this.width, this.height)
-
-    // Dunkler Hintergrund
-    fill('rgba(0, 0, 0, 0.8)')
-    rect(0,0,windowWidth, windowHeight)
-
-    // Grün für Zahlen
-    fill(0, 255, 70)
 
     // Jede Zahl ...
     figures.forEach(function (figure, index) {
@@ -46,6 +41,7 @@ function draw () {
           if (finishedFigures === maxFigures) {
             active = false
             finishedFigures = 0
+            canv.hide()
             createFigures()
           }
         }
@@ -57,12 +53,6 @@ function draw () {
 
 function createFigures () {
   figures = []
-
-  // Canvas-Element verbergen
-  canv.style('opacity', 0)
-  setTimeout(function () {
-    canv.hide()
-  }, 300)
 
   // erstellt <maxFigures> Zahlen
   for (var i = 0; i < maxFigures; i++) {
@@ -85,8 +75,5 @@ function windowResized () {
 
 function activate () {
   canv.show()
-  canv.style('opacity', 1)
-  setTimeout(function () {
-    active = true
-  }, 300)
+  active = true
 }
