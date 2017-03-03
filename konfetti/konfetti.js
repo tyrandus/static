@@ -1,6 +1,6 @@
 var figures = []          // Array für Zahlenobjekte
 var fontSize = 24         // Schriftgröße
-var maxFigures = 150      // Anzahl der zu zeigenden Zahlen
+var maxFigures = 100      // Anzahl der zu zeigenden Zahlen
 var finishedFigures = 0   // Zahlen, die unteren Bildschirmrand erreicht haben
 var active = false        // Animation gerade aktiv?
 var canv                  // <canvas#canv>
@@ -45,6 +45,7 @@ function draw () {
           // Wenn alle Zahlen durchgelaufen
           if (finishedFigures === maxFigures) {
             active = false
+            finishedFigures = 0
             createFigures()
           }
         }
