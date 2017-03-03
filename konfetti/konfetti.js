@@ -12,7 +12,7 @@ function setup () {
   textSize(fontSize)
   textFont('Consolas')
   background('rgba(0, 0, 0, 0)')
-  fill(0, 255, 70)
+  fill(15, 93, 0);
 
   // Zahlen generieren
   createFigures()
