@@ -1,4 +1,4 @@
-![Logo](icon.png)
+![Logo](./icon.png)
 
 # Server
 
