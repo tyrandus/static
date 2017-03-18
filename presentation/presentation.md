@@ -1,5 +1,3 @@
-![Logo](./icon.png)
-
 # Server
 
 ``` js
